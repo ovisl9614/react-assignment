@@ -1,40 +1,36 @@
-import React from 'react';
 import Bannerr from '../assets/banner-stack.png';
 
 const Banner = () => {
     return (
-        <div className="min-h-[400px] my-28 container mx-auto">
+        <section className="container mx-auto px-4 pt-16 pb-10 md:pt-24 md:pb-16">
 
-            {/* Flex Parent */}
-            <div className="flex items-center justify-between gap-10">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
 
-                {/* LEFT SIDE */}
-                <div className="w-1/2">
+               
+                <div className="w-full md:w-1/2 text-center md:text-left">
 
-                  <h2 className="tracking-[-1.5px] text-6xl font-extrabold text-black">
+                    <h2 className="tracking-[-1px] md:tracking-[-1.5px] text-4xl md:text-6xl font-extrabold text-black">
                         Build Your Ideal
-                  </h2>
+                    </h2>
 
-                  <h2 className="tracking-[-1.5px] text-6xl font-extrabold bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">
+                    <h2 className="tracking-[-1px] md:tracking-[-1.5px] text-4xl md:text-6xl font-extrabold bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">
                         Development Stack
-                  </h2>
+                    </h2>
 
-                  <br />
-
-                  <p className="text-3xl mt-6">
+                    <p className="text-base md:text-xl lg:text-2xl text-gray-500 mt-5 leading-7 md:leading-9">
                         Explore frontend, backend, database, and tooling options,
-                        compare them side by side, and put together the stack that fits your
-                        next project.
-                  </p>
+                        compare them side by side, and put together the stack that
+                        fits your next project.
+                    </p>
 
-                    {/* BUTTONS */}
-                    <div className="flex gap-3 mt-7">
+                    {/* btns */}
+                    <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3 mt-6">
 
-                        <button className="btn btn-lg border-none text-white bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED]">
+                        <button className="px-5 py-3 rounded-lg border-none text-white text-sm bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED]">
                             Explore Technologies
                         </button>
 
-                        <button className="btn btn-lg">
+                        <button className="px-5 py-3 rounded-lg border border-gray-200 bg-white text-gray-700 text-sm">
                             Learn More
                         </button>
 
@@ -42,18 +38,20 @@ const Banner = () => {
 
                 </div>
 
-                {/* RIGHT SIDE IMAGE */}
-                <div className="w-1/2 flex justify-center">
+                
+                <div className="w-full md:w-1/2 flex justify-center">
+
                     <img
                         src={Bannerr}
                         alt="Development Stack"
-                        className="w-full max-w-[500px]"
+                        className="w-full max-w-[320px] md:max-w-[500px]"
                     />
+
                 </div>
 
             </div>
 
-        </div>
+        </section>
     );
 };
 
