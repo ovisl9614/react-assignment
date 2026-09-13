@@ -89,9 +89,12 @@ const Cards = () => {
 
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-sm'>
-                                Add to Stack
-                            </button>
+                            <button
+                            onClick={() => toggleStack('React')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-sm'
+                        >
+                            {selected.includes('React') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
 
                         </div>
 
@@ -127,9 +130,12 @@ framework for building web user interfaces.
                                 <span className='text-gray-700'>⭐ 4.8</span>
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-sm'>
-                                Add to Stack
-                            </button>
+                            <button
+                            onClick={() => toggleStack('Vue.js')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-sm'
+                        >
+                            {selected.includes('Vue.js') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
                         </div>
 
                         {/* card 3 SVelte*/}
@@ -167,9 +173,12 @@ DOM overhead.
 
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'>
-                                Add to Stack
-                            </button>
+                            <button
+                            onClick={() => toggleStack('Svelte')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'
+                        >
+                            {selected.includes('Svelte') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
                         </div>
 
                         {/* card 4 Next.js*/}
