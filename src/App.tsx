@@ -1,6 +1,7 @@
 import Banner from "./components/Banner";
 import Nav from "./components/Nav";
 import Cards from './components/Cards';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
    <Nav />
    <Banner /> 
    <Cards />
+   <Footer />
     </>
     
   )

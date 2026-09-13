@@ -8,7 +8,7 @@ const Cards = () => {
 
                 <h2 className='text-2xl font-bold'>
                     Explore the{' '}
-                    <span className='bg-linear-to-r from-[#FF5722] via-[#D81B7E] bg-clip-text text-transparent'>
+                    <span className='bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent'>
                         Technologies
                     </span>
                 </h2>
