@@ -44,7 +44,7 @@ const Banner = () => {
                     <img
                         src={Bannerr}
                         alt="Development Stack"
-                        className="w-full max-w-[320px] md:max-w-[500px]"
+                        className="w-full max-w-[320px] md:max-w-125"
                     />
 
                 </div>

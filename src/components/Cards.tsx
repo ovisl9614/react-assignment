@@ -1,4 +1,4 @@
-
+import { useState } from 'react';
 import {
     FaReact,
     FaVuejs,
@@ -18,6 +18,21 @@ import {
 } from 'react-icons/si'
 
 const Cards = () => {
+
+    const [selected, setSelected] = useState<string[]>([]);
+
+    const toggleStack = (name: string) => {
+        setSelected((prev) =>
+            prev.includes(name)
+                ? prev.filter((item) => item !== name)
+                : [...prev, name]
+        );
+    };
+
+    const removeAll = () => {
+        setSelected([]);
+    };
+
     return (
         <div className='container mx-auto my-20 px-4'>
 
@@ -193,9 +208,12 @@ rendering.
                                 <span className='text-gray-700'>⭐ 4.9</span>
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'>
-                                Add to Stack
-                            </button>
+                            <button
+                            onClick={() => toggleStack('Next.js')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'
+                        >
+                            {selected.includes('Next.js') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
                         </div>
 
                         {/* card 5 Node.js*/}
@@ -221,7 +239,7 @@ runtime built on Chrome's V8 engine.
                             <div className='flex flex-wrap items-center justify-between gap-2 text-xs mt-3'>
 
                                  <div className='flex flex-wrap gap-2'>
-                                    <span className='bbg-blue-50 text-[#475569] px-2 py-1 rounded'>Backend</span>
+                                    <span className='bg-blue-50 text-[#475569] px-2 py-1 rounded'>Backend</span>
 
                                     <span className='bg-gray-50 text-gray-600 px-2 py-1 rounded'>Intermediate</span>
 
@@ -230,9 +248,12 @@ runtime built on Chrome's V8 engine.
                                 <span className='text-gray-700'>⭐ 4.8</span>
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'>
-                                Add to Stack
-                            </button>
+                            <button
+                            onClick={() => toggleStack('Node.js')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'
+                        >
+                            {selected.includes('Node.js') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
                         </div>
 
                         {/* card 6 PostgreSQL*/}
@@ -270,8 +291,11 @@ database system with proven reliability.
                                 <span className='text-gray-700'>⭐ 4.9</span>
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'>
-                                Add to Stack
+                            <button
+                                onClick={() => toggleStack('PostgreSQL')}
+                                className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'
+                            >
+                                {selected.includes('PostgreSQL') ? 'Remove from Stack' : 'Add to Stack'}
                             </button>
                         </div>
 
@@ -310,9 +334,12 @@ message broker.
                                 <span className='text-gray-700'>⭐ 4.8</span>
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'>
-                                Add to Stack
-                            </button>
+                            <button
+                            onClick={() => toggleStack('Redis')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'
+                        >
+                            {selected.includes('Redis') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
                         </div>
 
                         {/* card 8 JS*/}
@@ -350,9 +377,12 @@ web.
                                 <span className='text-gray-700'>⭐ 4.9</span>
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'>
-                                Add to Stack
-                            </button>
+                            <button
+                            onClick={() => toggleStack('JavaScript')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'
+                        >
+                            {selected.includes('JavaScript') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
                         </div>
 
                         {/* card 9 TS */}
@@ -389,9 +419,12 @@ that builds on JavaScript for robust tooling.
                                 <span className='text-gray-700'>⭐ 4.9</span>
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'>
-                                Add to Stack
-                            </button>
+                                                    <button
+                            onClick={() => toggleStack('TypeScript')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'
+                        >
+                            {selected.includes('TypeScript') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
                         </div>
 
                         {/* card 10 Java */}
@@ -429,9 +462,12 @@ scale.
                                 <span className='text-gray-700'>⭐ 4.6</span>
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'>
-                                Add to Stack
-                            </button>
+                           <button
+                            onClick={() => toggleStack('Java')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'
+                        >
+                            {selected.includes('Java') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
                         </div>
 
                         {/* card 11 Tailwind CS */}
@@ -469,9 +505,12 @@ custom UI.
                                 <span className='text-gray-700'>⭐ 4.9</span>
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'>
-                                Add to Stack
-                            </button>
+                            <button
+                            onClick={() => toggleStack('Tailwind CSS')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'
+                        >
+                            {selected.includes('Tailwind CSS') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
                         </div>
 
                         {/* card 12 Docker */}
@@ -507,24 +546,64 @@ containerized applications reliably.
                                 <span className='text-gray-700'>⭐ 4.9</span>
                             </div>
 
-                            <button className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'>
-                                Add to Stack
-                            </button>
+                           <button
+                            onClick={() => toggleStack('Docker')}
+                            className='w-full mt-3 py-1.5 rounded bg-[#0F172A] text-white text-xs'
+                        >
+                            {selected.includes('Docker') ? 'Remove from Stack' : 'Add to Stack'}
+                        </button>
                         </div>
 
                         
-                        {/*  */}
                     </div>
 
-                    <div className='w-1/4 border border-gray-200 rounded-lg p-4 h-fit'>
-                        <h4 className='font-bold text-sm'>Your Stack</h4>
-                        <p className='text-xs text-gray-400 mt-1'>0 Technology selected</p>
+                    <div className='w-full lg:w-1/4 border border-gray-200 rounded-lg p-4 h-fit'>
+
+                    <h4 className='font-bold text-sm'>
+                        Your Stack
+                    </h4>
+
+                    <p className='text-xs text-gray-400 mt-1'>
+                        {selected.length} Technology Selected
+                    </p>
+
+                    <div className='mt-3 space-y-2'>
+
+                        {selected.map((item) => (
+                            <div
+                                key={item}
+                                className='flex items-center justify-between border border-gray-200 rounded-lg p-2'
+                            >
+                                <span className='text-xs font-medium'>
+                                    {item}
+                                </span>
+
+                                <button
+                                    onClick={() => toggleStack(item)}
+                                    className='text-gray-400 hover:text-red-500'
+                                >
+                                    ✕
+                                </button>
+                            </div>
+                        ))}
+
                     </div>
-                </div>
 
-            </div>
+                    {selected.length > 0 && (
+                        <button
+                            onClick={removeAll}
+                            className='w-full mt-4 py-2 border border-red-200 text-red-500 rounded-lg text-xs hover:bg-red-50'
+                        >
+                            Remove All
+                                </button>
+                            )}
 
-            <div>
+                        </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div>
                 <ul>
                     <li></li>
                 </ul>

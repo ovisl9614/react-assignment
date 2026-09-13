@@ -20,7 +20,7 @@ const Nav = () => {
 
                    
                     <ul className="hidden md:flex items-center gap-6">
-                        <li className="text-[#DB2777] cursor-pointer">
+                        <li className="text-[#DB2777] cursor-pointer hover:text-[#9615b6] ">
                             Home
                         </li>
 
